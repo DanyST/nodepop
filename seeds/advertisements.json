@@ -1,0 +1,40 @@
+{
+    "data": [
+        {
+            "name": "Cafetera expreso Oster 65P",
+            "sell": true,
+            "price": 130,
+            "photo": "images/advertisements/cafetera.jpg",
+            "tags": ["work", "lifestyle"]
+        },
+        {
+            "name": "Nintendo Switch",
+            "sell": true,
+            "price": 264,
+            "photo": "images/advertisements/nintendo-switch.jpg",
+            "tags": ["lifestyle"]
+        },
+        {
+            "name": "Teclado Apple MLA22Y/A",
+            "sell": false,
+            "price": 60,
+            "photo": "images/advertisements/apple-keyboard.jpg",
+            "tags": ["work", "lifestyle", "mobile"]
+        },
+        {
+            "name": "iPad Pro 12 pulgadas",
+            "sell": false,
+            "price": 500,
+            "photo": "images/advertisements/ipad-pro.jpg",
+            "tags": ["work", "lifestyle", "mobile"]
+        },
+        {
+            "name": "maquina Grofera",
+            "sell": true,
+            "price": 15,
+            "photo": "images/advertisements/maquina-grofera.jpg",
+            "tags": ["lifestyle"]
+        }
+    ]
+}
+   

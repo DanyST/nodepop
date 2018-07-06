@@ -1,0 +1,14 @@
+{
+    "data": [
+        {
+            "name": "Smith",
+            "email": "smith@matrix.com",
+            "password": "1234"
+        },
+        {
+            "name": "Jones",
+            "email": "jones@matrix.com",
+            "password": "1234"
+        }
+    ]
+}

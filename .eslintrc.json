@@ -7,7 +7,8 @@
         "no-restricted-globals": "off",
         "no-shadow": "off",
         "semi":"error",
-        "func-names": "off"
+        "func-names": "off",
+        "radix": "off"
     },
     "env": {
         "node": true

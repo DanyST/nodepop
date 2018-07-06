@@ -5,10 +5,12 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "DEBUG=nodepop:* nodemon ./bin/www",
+    "installDB": "node ./lib/install_db",
     "production": "node ./bin/www",
     "create-eslint-file": "./node_modules/.bin/eslint --init"
   },
   "dependencies": {
+    "bcrypt": "^3.0.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
