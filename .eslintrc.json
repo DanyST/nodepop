@@ -1,28 +1,15 @@
 {
-    "env": {
-        "es6": true,
-        "node": true
-    },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "sourceType": "module"
-    },
+    "extends": "airbnb-base",
     "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
+        "indent": ["error", 4],
+        "no-restricted-modules": "off",
+        "no-use-before-define": "off",
+        "no-restricted-globals": "off",
+        "no-shadow": "off",
+        "semi":"error",
+        "func-names": "off"
+    },
+    "env": {
+        "node": true
     }
 }
