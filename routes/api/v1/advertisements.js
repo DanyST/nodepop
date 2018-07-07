@@ -2,8 +2,13 @@ const express = require('express');
 
 const router = express.Router();
 const Advertisement = require('../../../models/Advertisement');
+const jwtAuth = require('../../../lib/jwtAuth');
 
-router.get('/', async (req, res, next) => {
+/**
+ * GET /
+ * Advertisement list
+ */
+router.get('/', jwtAuth(), async (req, res, next) => {
     try {
         const {
             name, sell, tags, price, fields, sort,
@@ -30,7 +35,6 @@ router.get('/', async (req, res, next) => {
         if (price) {
             filter.price = price;
         }
-
 
         const advertisements = await Advertisement.list(filter, skip, limit, fields, sort);
         res.json({ success: true, results: advertisements });
