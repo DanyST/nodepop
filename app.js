@@ -36,6 +36,11 @@ app.use((req, res, next) => {
 
 // error handler
 app.use((err, req, res, next) => {
+    if (err.array) { // validation error
+        err.status = 422;
+        const errInfo = err.array({ onlyFirstError: true })[0];
+        err.message = `Error Validation - ${errInfo.param} ${errInfo.msg}`;
+    }
 
     res.status(err.status || 500);
 

@@ -15,13 +15,15 @@ npm install
 
 ###MongoDB
 Install MongoDB with: 
-````
+
+```
 brew install mongodb
 ```
 
 start mongodb services with:
 
 finally run command:
+
 ```shell
 npm run installDB
 ```

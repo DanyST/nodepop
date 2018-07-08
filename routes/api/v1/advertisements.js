@@ -4,11 +4,13 @@ const router = express.Router();
 const Advertisement = require('../../../models/Advertisement');
 const jwtAuth = require('../../../lib/jwtAuth');
 
+router.use(jwtAuth());
+
 /**
  * GET /
  * Advertisement list
  */
-router.get('/', jwtAuth(), async (req, res, next) => {
+router.get('/', async (req, res, next) => {
     try {
         const {
             name, sell, tags, price, fields, sort,
@@ -41,6 +43,14 @@ router.get('/', jwtAuth(), async (req, res, next) => {
     } catch (err) {
         next(err);
     }
+});
+
+/**
+ * GET /tags
+ * Avertisements tags list
+ */
+router.get('/tags', (req, res, next) => {
+    res.json({ success: true, results: ['works, lifestyle, mobile', 'motor'] });
 });
 
 module.exports = router;
