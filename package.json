@@ -12,6 +12,7 @@
   "dependencies": {
     "bcrypt": "^3.0.0",
     "cookie-parser": "~1.4.3",
+    "crossenv": "0.0.2-security",
     "debug": "~2.6.9",
     "ejs": "~2.5.7",
     "express": "~4.16.0",
@@ -21,6 +22,7 @@
     "morgan": "~1.9.0"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0"
