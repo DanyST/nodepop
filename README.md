@@ -89,4 +89,21 @@ You first should do authentication
 * Http Method: GET
 * Params:
 	* token: Authentication token (String)
-	* fields: filter for advertisements attributes that you can , example: 	
+	* fields: filter for advertisements attributes that you want to get with spaces , example: filter name and quit id ```?fields=name -id```
+    * limit: advertisements number what you want to get 
+    * skip: advertisements number what you want to escape
+    * name: filter for search advertisements with a name
+    * tags: filter for search advertisements with tags with comma or space, example: ```?tags=work, mobile ```
+    * price: filter for search advertisements with a price range
+        * minimum price: ad d dash before the price. Example ```?price=-50```
+        * maximum price: add dash after the price. Example ```?price=50-```
+        * range price: add dash between two price. Example ```?price=10-80```
+        * equal price: only add a price. Example ```?price=50```
+    * sell: filter for search advertisements in **sell** or **buy** status. Example: ```?sell=true```
+* results: response in JSON format with two properties, **success** and **results** with advertisements data.
+
+##Advertisements Tag List
+* Entry point: api/v1/advertisements/tags
+* Http Method: GET
+* Params: params not require
+* result: response in JSON format with two properties, **success** and **results** with tags data.
