@@ -4,7 +4,13 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../../../models/User');
-const localConfig = require('../../../localConfig');
+
+/**
+ * JWT Configuration
+ */
+const jwtSecretKey = process.env.JWT_SECRET_KEY || '$2b$10$gsHv1d/F17zS0mpTd/v.tuBfVFW6/0QJkbWPTKAz5enplP9nTNTQS';
+const jwtExpireIn = process.env.JWT_EXPIRE_IN || '1d';
+
 
 /**
  * POST /login
@@ -38,7 +44,7 @@ router.post('/login', async (req, res, next) => {
         }
 
         // create JWT
-        jwt.sign({ user_id: user._id }, localConfig.jwt.secret, { expiresIn: localConfig.jwt.expiresIn }, (err, token) => {
+        jwt.sign({ user_id: user._id }, jwtSecretKey, { expiresIn: jwtExpireIn }, (err, token) => {
             if (err) {
                 next(err);
                 return;

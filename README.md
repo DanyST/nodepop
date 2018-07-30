@@ -1,6 +1,14 @@
-#Nodepop API
+# Nodepop API
 
-##features
+## Demo
+### Devops module bootcamp
+``` https://api.lherreral.me ```
+
+Static file: ``` https://api.lherreral.me/images/nintendo.jpg ```
+
+IP Server for the Bootcamp practice``` 34.194.179.177 ```
+
+## features
 * User Register (email, password, name)
 * User Authentication
 * Advertisements list
@@ -10,18 +18,18 @@
 	* Name Search
 * Advertisements tags list
 
-##Requisites
+## Requisites
  * nodejs >= 8.11.3
  * mongodb >= 4.0.0
 
-##Installation
+## Installation
 
-###MongoDB
+### MongoDB
 Install [MongoDB](https://www.mongodb.com) and follow install instructions in the web page. Then Start services mongoDB
 
-###In the root project exec the following commands:
+### In the root project exec the following commands:
 
-Ins tall dependencies with:
+Install dependencies with:
 
 ```shell
 npm install
@@ -42,18 +50,18 @@ user: brown@matrix.com
 password: 1234
 ```
 
-The root directory of the API will contain a **localConfig.example.js**. You should duplicate the file with the name **localConfig.js**. **This should you do in developmenet and production environment**.
+### Enviroment variables
+In the project there are 3 Enviroment Variables:
 
-The localConfig.js has two properties that correspond to jsonwebtoken options
+*MONGODB_URI*: URI connection to mongoDB, if no exist this variable, the default value is ``` mongodb://localhost:27017/nodepop ```
 
-```
-secret: 'secretKey',
-expiresIn: '2d',
-```
+*JWT_SECRET_KEY*: if no exists this variable, the default value is ```$2b$10$gsHv1d/F17zS0mpTd/v.tuBfVFW6/0QJkbWPTKAz5enplP9nTNTQS```
 
-```expiresIn```: expressed in seconds or a string describing a time span zeit/ms. Eg: 60, "2 days", "10h", "7d". A numeric value is interpreted as a seconds count. If you use a string be sure you provide the time units (days, hours, etc), otherwise milliseconds unit is used by default ("120" is equal to "120ms").
+*JWT_EXPIRE_IN*: expiration time for JWT, if no exist this variable, the default value is ``` 1d ```
 
-##Getting Started
+More information about ```JWT_EXPIRE_IN```: expressed in seconds or a string describing a time span zeit/ms. Eg: 60, "2 days", "10h", "7d". A numeric value is interpreted as a seconds count. If you use a string be sure you provide the time units (days, hours, etc), otherwise milliseconds unit is used by default ("120" is equal to "120ms").
+
+## Getting Started
 start the server
 
 ```
@@ -64,9 +72,9 @@ npm start
 
 You first should do authentication 
 
-#API Documentation Usage
+# API Documentation Usage
  
-##User Registration
+## User Registration
 * Entry point: api/v1/users/register
 * Http Method: POST
 * Params:
@@ -75,7 +83,7 @@ You first should do authentication
 	* password: user password (string)
 * Result: response in JSON format with 2 properties: **success** and **message**
 
-##User authentication
+## User authentication
 * Entry point: api/v1/users/login
 * Http Method: POST
 * Params:
@@ -84,7 +92,7 @@ You first should do authentication
 * Result: response in JSON format with one property: **token**
 
 
-##Advertisements List
+## Advertisements List
 * Entry point: api/v1/advertisements
 * Http Method: GET
 * Params:
@@ -102,7 +110,7 @@ You first should do authentication
     * sell: filter for search advertisements in **sell** or **buy** status. Example: ```?sell=true```
 * results: response in JSON format with two properties, **success** and **results** with advertisements data.
 
-##Advertisements Tag List
+## Advertisements Tag List
 * Entry point: api/v1/advertisements/tags
 * Http Method: GET
 * Params: params not require
